@@ -1,0 +1,249 @@
+html{
+    /* 375px设计稿中：一个REM=100px */
+    font-size: 100px;
+}
+html,
+body{
+    height: 100%;
+    overflow: hidden;
+}
+
+.mainBox{
+    height: 100%;
+    overflow: hidden;
+    /* 最大宽度750px */
+    max-width: 750px;
+    margin:0 auto;
+    position: relative;
+}
+.swiper-container,
+.swiper-slide{
+    height: 100%;
+    overflow: hidden;
+}
+.swiper-slide{
+    position: relative;
+}
+/* PAGE 1 */
+.page1{
+    background: url('../image/index_6.png') no-repeat;
+    /* 以最适合的比例缩放背景 */
+    background-size: cover;
+}
+.page1 img{
+    position: absolute;
+}
+.page1 img:nth-child(1){
+    width: 3.44rem;
+    height: 1.74rem;
+    right: 0;
+    top:0.27rem;
+}
+.page1 img:nth-child(2){
+    width: 100%;
+    height: 2.75rem;
+    left: 0;
+    bottom: 0;
+}
+.page1 img:nth-child(3){
+    width: 1.6rem;
+    height: 1.05rem;
+    top: 50%;
+    left: 50%;
+    margin-left: -.8rem;
+    margin-top: -.025rem;
+}
+.page1 img:nth-child(4){
+    width: 1.25rem;
+    height: 1.4rem;
+    top: 50%;
+    left: 50%;
+    margin-left: -1.525rem;
+    margin-top: -1.6rem;
+}
+.page1 img:nth-child(5){
+    width: 2rem;
+    height: 2rem;
+    top: 50%;
+    left: 50%;
+    margin-left: -.2rem;
+    margin-top: -1.5rem;
+}
+/* PAGE 2 */
+.page2{
+    background: url('../image/page2_1.jpg') no-repeat;
+    background-size: cover;
+}
+.page2>img{
+    position: absolute;
+}
+.page2>img:nth-of-type(1){
+    /* .page2>img:nth-child(1)获取page2所有儿子中的第一个，并且必须是img 
+        .page2>img:nth-of-type(1)获取page2所有儿子中所有img，获取第一个img
+    */
+    width: 1.1rem;
+    height: .8rem;
+    left: .4rem;
+    top: .65rem;
+}
+.page2>img:nth-of-type(2){
+    width: 1.1rem;
+    height: 1rem;
+    top: .6rem;
+    right: .3rem;
+}
+.page2>img:nth-of-type(3){
+    width: .8rem;
+    height: .6rem;
+    top: 1.7rem;
+    right: .3rem;
+}
+.page2>img:nth-of-type(4){
+    width: .9rem;
+    top: 2.4rem;
+    right: .2rem;
+}
+.page2>img:nth-of-type(5){
+    width: .85rem;
+    bottom: .55rem;
+    left: .2rem;
+}
+.page2>img:nth-of-type(6){
+    width: .9rem;
+    left: 50%;
+    margin-left: .45rem;
+}
+.page2>img:nth-of-type(7){
+    width: .95rem;
+    bottom: .35rem;
+    left: .2rem;
+}
+
+.page2 .text{
+    position: absolute;
+    top: 1.5rem;
+    left: .4rem;
+}
+.page2 .text p{
+    line-height: .32rem;
+    font-size: .16rem;
+    color: rgb(84, 63, 27);
+}
+.page2 .photo{
+    position: absolute;
+    width: 2.72rem;
+    height: 1.62rem;
+    padding: .2rem;
+    background: url('../image/page2_6.png') no-repeat;
+    background-size: 100% 100%;
+    left: 50%;
+    margin-left: -1.56rem;
+    bottom: 1.1rem;
+}
+.page2 .photo img{
+    width: 2.72rem;
+    height: 1.62rem;
+}
+
+/* PAGE 3 */
+.page3{
+    background: url('../image/page2_1.jpg') no-repeat;
+    background-size: 100% 100%;
+}
+.page3>img{
+    position: absolute;
+}
+.page3>img:nth-of-type(1){
+    width: 83%;
+    height: 25%;
+    top: 4%;
+    left: 50%;
+    margin-left: -41.5%;
+}
+.page3>img:nth-of-type(2){
+    bottom: 0;
+    width: 100%;
+    left: 0;
+}
+.page3 .concat{
+    position: absolute;
+    width: 74%;
+    height: 30%;
+    top: 50%;
+    left: 50%;
+    margin-top: -15%;
+    margin-left: -37%;
+    background: url('../image/page3_2.png') no-repeat;
+    background-size: 100% 100%;
+}
+.page3 .concat img,
+.page3 .concat .text{
+    /* 百分比是相对于concat来计算，而不是整个页面 */
+    width: 45%;
+    position: absolute;
+    height: 62%;
+    top: 50%;
+    margin-top: -22%;
+    left: 11%;
+}
+.page3 .concat .text{
+    left: auto;
+    right: -5%;
+    top: 65%;
+}
+.page3 .concat .text p{
+    font-size: .16rem;
+    letter-spacing: .06rem;
+    color: #fff;
+    line-height: .35rem;
+}
+
+/* 在某些特定宽高的手机中，可能发生重叠，要用@media */
+@media all and (max-height:500px){
+    .page2 .photo{
+        bottom: .8rem;
+    }
+}
+.mainBox .previousTip{
+    /* 提示按钮 */
+    position: absolute;
+    width: .25rem;
+    height: .2rem;
+    bottom: .25rem;
+    left: 50%;
+    margin-left: -.125rem;
+    z-index: 9999;
+    background: url('../image/arrow.png') no-repeat;
+    background-size: 100% 100%;
+    animation: previousTipMove .8s linear infinite;
+}
+@keyframes previousTipMove{
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-.25rem);
+    }
+}
+.mainBox .musicBox{
+    position: absolute;
+    top: .15rem;
+    right: .15rem;
+    width: .3rem;
+    height: .3rem;
+    background: url('../image/music.svg') no-repeat;
+    background-size: 100% 100%;
+    z-index: 9999;
+}
+.mainBox .musicBox.move{
+    animation: musicMove 1s linear infinite both;
+}
+@keyframes musicMove{
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
